@@ -1,0 +1,29 @@
+# build output
+dist/
+
+# generated types
+.astro
+
+# dependencies
+node_modules
+
+# logs
+yarn-debug.log
+yarn-error.log
+
+# environment
+.env
+
+# os/ide specific
+.DS_Store
+.idea
+.vscode
+
+# yarn files (https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored)
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
