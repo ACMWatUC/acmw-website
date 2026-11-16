@@ -1,0 +1,50 @@
+---
+interface Props {
+  name: string;
+  role?: string | undefined;
+  image: string;
+
+  linkedin?: string | undefined;
+  instagram?: string | undefined;
+  email?: string | undefined;
+}
+
+const { name, role, image, linkedin, instagram, email } = Astro.props;
+
+const links = [
+  { href: linkedin, icon: "bi-linkedin" },
+  { href: instagram, icon: "bi-instagram" },
+  { href: email && `mailto:${email}`, icon: "bi-envelope" },
+].filter((link) => link.href);
+---
+
+<div class="col-sm-6 col-lg-3">
+  <div class="text-center">
+    <div class="avatar avatar-xxl mb-2">
+      <img
+        class="avatar-img rounded-circle"
+        src={image}
+        width="82px;"
+        height="82px;"
+        style="object-fit: cover;"
+        alt={name}
+      />
+    </div>
+    <h5>{name}</h5>
+    {role && <p class="m-0">{role}</p>}
+    <ul class="nav justify-content-center">
+      {
+        links.map(({ href, icon }) => (
+          <li class="nav-item">
+            <a
+              class="nav-link px-2 fs-5"
+              {href}
+            >
+              <i class={`bi ${icon}`} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

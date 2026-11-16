@@ -1,0 +1,60 @@
+[
+  {
+    "name": "Sarah Barazi",
+    "role": "President",
+    "image": "/img/sarah.jpg",
+    "linkedin": "https://www.linkedin.com/in/sarrah-barazi/",
+    "email": "barazias@mail.uc.edu"
+  },
+  {
+    "name": "Mehek Bakali",
+    "role": "Vice President",
+    "image": "/img/mehek.jpg",
+    "linkedin": "https://www.linkedin.com/in/mehekbakali/",
+    "instagram": "https://www.instagram.com/mehekbakali/",
+    "email": "bakalimk@mail.uc.edu"
+  },
+  {
+    "name": "Ruksha Khadka",
+    "role": "Treasurer",
+    "image": "/img/ruksha.jpg",
+    "linkedin": "https://www.linkedin.com/in/rukshakhadka",
+    "email": "khadkara@mail.uc.edu"
+  },
+  {
+    "name": "Suhani Garg",
+    "role": "Webmaster",
+    "image": "/img/suhani.jpg",
+    "linkedin": "https://www.linkedin.com/in/suhani-garg23",
+    "email": "gargs3@mail.uc.edu"
+  },
+  {
+    "name": "Audrey Antiri",
+    "role": "Community Service Co-chair",
+    "image": "/img/audrey.jpg",
+    "linkedin": "https://www.linkedin.com/in/audrey-antiri-profile",
+    "email": "antiriaa@mail.uc.edu"
+  },
+  {
+    "name": "Laci Snyder",
+    "role": "Recruitment Chair",
+    "image": "/img/laci.jpg",
+    "linkedin": "https://www.linkedin.com/in/laci-snyder",
+    "instagram": "https://www.instagram.com/laci.snyder/",
+    "email": "snyderlc@mail.uc.edu"
+  },
+  {
+    "name": "Saba Malik",
+    "role": "Marketing Chair",
+    "image": "/img/acmw_logo_transparent_bg.png",
+    "linkedin": "https://www.linkedin.com/in/saba57",
+    "instagram": "https://www.instagram.com/saba_malik57/",
+    "email": "maliksb@mail.uc.edu"
+  },
+  {
+    "name": "Dr. Jillian Aurisano",
+    "role": "Advisor",
+    "image": "/img/AurisanoJillian.jpg",
+    "email": "aurisajm@ucmail.uc.edu"
+  }
+]

@@ -1,0 +1,93 @@
+---
+/*
+  © 2021, Built with Bootstrap by Melanie Mai
+  Updated by Anusha Chitranshi, 2022
+  Updated by Reese Rapin, 2023
+*/
+
+import Navbar, { type Page } from "../components/Navbar.astro";
+
+interface Props {
+  active: Page;
+  title?: string;
+}
+
+const { active, title = "ACM-W at UC" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>{title}</title>
+
+    <link
+      rel="shortcut icon"
+      href="/img/acmw_logo_transparent_bg.png"
+    />
+
+    <!-- Bootstrap CSS // DO NOT REMOVE -->
+    <link
+      rel="stylesheet"
+      href="/css/bootstrap.min.css"
+    />
+
+    <!-- Bootstrap Icons // DO NOT REMOVE -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Google Fonts // DO NOT REMOVE -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    />
+
+    <!-- Custom CSS // DO NOT REMOVE -->
+    <link
+      rel="stylesheet"
+      href="/css/style.css"
+    />
+  </head>
+
+  <body>
+    <main>
+      <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+          <Navbar {active} />
+        </header>
+
+        <slot />
+      </div>
+    </main>
+
+    <!-- jQuery script // DO NOT REMOVE -->
+    <script
+      is:inline
+      src="/js/jquery.3.6.0.js"
+    ></script>
+    <!-- Bootstrap script // DO NOT REMOVE -->
+    <script
+      is:inline
+      src="/js/bootstrap.min.js"
+    ></script>
+  </body>
+</html>

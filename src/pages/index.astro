@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout active="home">
+  <!-- Hero -->
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h5>Hello World! We are</h5>
+      <h1 class="display-4 fw-bold">ACM-W @ <span style="color: red">UC</span></h1>
+      <p class="col-md-8 fs-6">
+        ACM-W @ UC is a women-interest group for all students who are interested in computing or technology. We host students in Computer
+        Science, Computer Engineering, Electrical Engineering, Information Systems, and Information Technology, however, we are open to
+        everyone!
+      </p>
+    </div>
+  </div>
+
+  <div class="d-flex flex-column gap-3 mb-4">
+    <!-- Who we are -->
+    <div class="card">
+      <div class="card-body">
+        <h4
+          class="card-title"
+          style="text-align: left;"
+        >
+          Who we are
+        </h4>
+        <p class="card-text">
+          As a student organization, we hold events throughout the semester to develop our members! Some of these events are tech-talks,
+          company networking, and socials. We also serve the local community with outreach and mentorship programs.
+        </p>
+
+        <h4
+          class="card-title"
+          style="text-align: left;"
+        >
+          Our Mission
+        </h4>
+        <p class="card-text">
+          Our purpose is to increase the recruitment and retention of women in computing at the University of Cincinnati. The number of
+          women in computer science and other fields of computing is falling, and we will strive to educate women throughout the pipeline,
+          girls in K-12, undergraduate and graduate students on the benefits of a computing. The organization will aim to align with the
+          university’s diversity campaign and will serve as an outreach organization for current women and also, men in the field of
+          computing.
+        </p>
+      </div>
+    </div>
+
+    <!-- Missed a meeting? -->
+    <div class="card">
+      <div class="card-body d-flex align-items-center gap-3">
+        <div class="flex-grow-1">
+          <h5
+            class="card-title"
+            style="text-align: left;"
+          >
+            Missed a meeting?
+          </h5>
+          <p class="card-text mb-0">No worries! Easily catch up on the latest meetings through our slide decks.</p>
+        </div>
+        <a
+          href="meetings.html"
+          class="btn btn-dark rounded-pill text-nowrap"
+        >
+          View
+        </a>
+      </div>
+    </div>
+
+    <!-- ACM-W Global -->
+    <div class="card">
+      <div class="card-body d-flex align-items-center gap-3">
+        <div class="flex-grow-1">
+          <h5
+            class="card-title"
+            style="text-align: left;"
+          >
+            ACM-W
+          </h5>
+          <p class="card-text mb-0">Visit the official ACM-W global website to learn more about women in computing.</p>
+        </div>
+        <a
+          href="https://women.acm.org/"
+          class="btn btn-dark rounded-pill text-nowrap"
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+
+    <!-- Announcements -->
+    <div class="card">
+      <div class="card-body">
+        <h4
+          class="card-title"
+          style="text-align: left;"
+        >
+          Announcements
+        </h4>
+        <p class="card-text">Next meeting on 11/17/2026 @ 6 CCH 1130 .</p>
+      </div>
+    </div>
+  </div>
+</Layout>

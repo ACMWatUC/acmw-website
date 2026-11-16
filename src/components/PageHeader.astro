@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div
+  class="card text-center"
+  style="border: none; outline: none;"
+>
+  <div class="py-3"></div>
+  <h1
+    class="text-center center"
+    style="color: black;"
+  >
+    {title}<br />
+  </h1>
+  <div class="py-3"></div>
+</div>
+<div class="py-3"></div>

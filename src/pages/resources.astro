@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+
+const organizations = [
+  {
+    name: "ACM (Association for Computing Machinery)",
+    description:
+      "ACM@UC (student chapter of the Association for Computing Machinery at the University of Cincinnati) is the University of " +
+      "Cincinnati’s computer science and programming community. The student organization educates students about popular technology " +
+      "through workshops, presentations, and informational lectures by professors, guest speakers, and students. ACM host biweekly " +
+      "meetings, weekly office hours, social events, and RevolutionUC, the university's student hackathon. ACM@UC is open to all majors " +
+      "and official ACM membership is not required to participate.",
+    links: [
+      { label: "Website", href: "http://acmatuc.org/" },
+      { label: "Campuslink", href: "https://campuslink.uc.edu/organization/acmatuc" },
+    ],
+  },
+  {
+    name: "NSBE (National Society of Black Engineers)",
+    description:
+      "With more than 500 chapters and nearly 16,000 active members in the U.S. and abroad, the National Society of Black Engineers " +
+      "(NSBE) is one of the largest student-governed organizations based in the United States. NSBE, a 501(c)(3) nonprofit organization " +
+      "founded in 1975, supports and promotes the aspirations of collegiate and pre-collegiate students and technical professionals in " +
+      'engineering and technology. NSBE’s mission is "to increase the number of culturally responsible black engineers who excel ' +
+      'academically, succeed professionally and positively impact the community."',
+    links: [
+      { label: "Website", href: "http://www.nsbe.uc.edu/" },
+      { label: "Campuslink", href: "https://campuslink.uc.edu/organization/national-society-of-black-engineers" },
+    ],
+  },
+  {
+    name: "WIT (Women in Technology)",
+    description:
+      "Women in Technology (WIT) is a student organization which engages, encourages, and emboldens women involved in technology. The " +
+      "tech field is rapidly growing and it's important the students at the University of Cincinnati have the opportunity to gain " +
+      "insights into industry and to network with respected professionals. WIT recognizes the outstanding gender gap in nearly all " +
+      "technology fields and aims to bridge this gap for students now. Connecting female peers across various tech-centric majors " +
+      "including but not limited to computer science, information technology, information systems and engineering helps develop a " +
+      "community of support and empowerment. Our organization is constantly looking to give students the chance to form relationships " +
+      "with each other, enhance their technical capabilities, and build connections with industry leaders.",
+    links: [{ label: "Campuslink", href: "https://campuslink.uc.edu/organization/women-in-technology" }],
+  },
+];
+---
+
+<Layout active="resources">
+  <div class="resources-info">
+    <div class="container">
+      <div class="col-lg-9 mx-auto">
+        <PageHeader title="Resources" />
+        <div class="resources-main d-grid gap-3">
+          <h3>Other Organizations</h3>
+          {
+            organizations.map(({ name, description, links }, i) => (
+              <>
+                {i > 0 && <hr />}
+                <h4>{name}</h4>
+                <p>
+                  {description}
+                  <br />
+                  <br />
+                  {links.map(({ label, href }, j) => (
+                    <>
+                      {j > 0 && " | "}
+                      <a
+                        {href}
+                        target="_blank"
+                      >
+                        {label}
+                      </a>
+                    </>
+                  ))}
+                </p>
+              </>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

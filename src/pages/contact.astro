@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/PageHeader.astro";
+import socials from "../data/socials.json";
+---
+
+<Layout active="contact">
+  <div class="contact-info">
+    <div class="container">
+      <div class="col-lg-9 mx-auto">
+        <PageHeader title="Contact Us" />
+
+        <!-- Google Map -->
+        <div
+          id="map-container-google-1"
+          class="z-depth-1-half map-container"
+          style="height: 500px"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24759.338868340066!2d-84.5352936984784!3d39.13111198009931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b38b684945f5%3A0x3287041174565f93!2s2600%20Clifton%20Ave%2C%20Cincinnati%2C%20OH%2045220!5e0!3m2!1sen!2sus!4v1629070086258!5m2!1sen!2sus"
+            width="800"
+            height="600"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="py-3"></div>
+
+        <div class="row">
+          <!-- Socials -->
+          <div class="col-6 mx-auto">
+            <div
+              class="card"
+              style="border: none; outline: none;"
+            >
+              <h3>Follow us Online</h3>
+              <p>Want to keep up with all of our events and meetings? Feel free to follow us on our social media!</p>
+              <div class="social-links row">
+                {
+                  socials.map(({ href, icon }) => (
+                    <div class="col-2">
+                      <p>
+                        <a {href}>
+                          <i class={`bi ${icon}`} />
+                        </a>
+                      </p>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="col-6 mx-auto">
+            <div
+              class="card"
+              style="border: none; outline: none;"
+            >
+              <h3>Contact Information</h3>
+              <p>Feel free to drop us an email for any questions or concerns you may have!</p>
+              <p>2600 Clifton Ave, Cincinnati, OH 45221</p>
+              <p>Email: <small><a href="mailto:acmwuc@gmail.com">acmwuc@gmail.com</a></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

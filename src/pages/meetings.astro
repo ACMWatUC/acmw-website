@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+interface Meeting {
+	date: string;
+	title: string;
+	location: string;
+	// Optional links (e.g. Teams, Recording, Slides); shown as "N/A" when empty.
+	links?: { label: string; href: string }[];
+}
+
+const months: { name: string; meetings: Meeting[] }[] = [
+	{
+		name: 'September',
+		meetings: [{ date: '29', title: 'Bearcat Coders', location: 'Tue. 6:00pm in Swift 608' }],
+	},
+	{
+		name: 'October',
+		meetings: [
+			{
+				date: '14',
+				title: 'Pumpkin Painting ',
+				location: 'Wed. 6:00pm in CCH 5280',
+			},
+			{
+				date: '21',
+				title: 'Women in Tech Panel ',
+				location: 'Wed. 5:00pm in Lindner 3235',
+			},
+		],
+	},
+	{
+		name: 'November',
+		meetings: [
+			{ date: '9', title: 'Game Night ', location: 'Mon. 5:00pm in Old Chem 665' },
+			{ date: '17', title: 'Friendsgiving ', location: 'Tue. 6:00pm in CCH 1130' },
+		],
+	},
+];
+---
+
+<Layout active="meetings">
+	<div class="meetings-info">
+		<div class="container">
+			<div class="col-lg-9 mx-auto">
+				<div class="card text-center" style="border: none; outline: none;">
+					<div class="py-3"></div>
+					<h1 class="text-center center" style="color: black;">Meetings & Events<br /></h1>
+					<div class="py-3"></div>
+				</div>
+				<div class="py-3"></div>
+				<div class="meetings-main d-grid gap-3">
+					{
+						months.map((month) => (
+							<>
+								<h3>{month.name}</h3>
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th scope="col">Date</th>
+											<th scope="col">Meeting</th>
+											<th scope="col">Location</th>
+											<th scope="col">Links</th>
+										</tr>
+									</thead>
+									<tbody>
+										{month.meetings.map((meeting) => (
+											<tr>
+												<th scope="row">{meeting.date}</th>
+												<td>{meeting.title}</td>
+												<td>{meeting.location}</td>
+												<td>
+													{meeting.links?.length
+														? meeting.links.map((link, i) => (
+																<>
+																	{i > 0 && <Fragment set:html="&nbsp;|&nbsp;" />}
+																	<a href={link.href} target="_blank">
+																		{link.label}
+																	</a>
+																</>
+															))
+														: 'N/A'}
+												</td>
+											</tr>
+										))}
+									</tbody>
+								</table>
+							</>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>

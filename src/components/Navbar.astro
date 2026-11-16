@@ -1,0 +1,83 @@
+---
+import socials from "../data/socials.json";
+
+export type Page = "home" | "about" | "involvement" | "meetings" | "resources" | "contact";
+
+interface Props {
+  active: Page;
+}
+
+const { active } = Astro.props;
+
+const pages: { id: Page; href: string; label: string }[] = [
+  { id: "home", href: "index.html", label: "HOME" },
+  { id: "about", href: "about.html", label: "ABOUT" },
+  { id: "involvement", href: "involvement.html", label: "GET INVOLVED" },
+  { id: "meetings", href: "meetings.html", label: "MEETINGS" },
+  { id: "resources", href: "resources.html", label: "RESOURCES" },
+  { id: "contact", href: "contact.html", label: "CONTACT" },
+];
+---
+
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+  <div class="container">
+    <a
+      class="navbar-brand m-0"
+      href="index.html"
+    >
+      <img
+        src="/img/a73zf-93a2g.svg"
+        alt=""
+        width="75"
+        height="75"
+        class="d-inline-block"
+      />
+      ACM-W@UC
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarNavDropdown"
+    >
+      <ul class="navbar-nav mx-auto">
+        {
+          pages.map(({ id, href, label }) => (
+            <li class="nav-item">
+              <a
+                class:list={["nav-link", { active: id === active }]}
+                aria-current={id === active ? "page" : undefined}
+                {href}
+              >
+                {label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <ul class="navbar-nav">
+        {
+          socials.map(({ href, icon }) => (
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                {href}
+              >
+                <i class={`bi ${icon}`} />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
